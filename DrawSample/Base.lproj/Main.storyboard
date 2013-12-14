@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ToX-nY-N0G">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Draw View Controller - Item-->
+        <scene sceneID="tOi-SR-R5R">
+            <objects>
+                <viewController id="VdH-1O-eak" customClass="DrawViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xx6-u8-OwU"/>
+                        <viewControllerLayoutGuide type="bottom" id="zVu-ny-sGR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v55-vS-xm1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kju-97-jCO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyr-r8-BtD">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gjQ-6S-oJI"/>
+                                    <barButtonItem style="plain" id="gqv-JQ-Xoj">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" id="Gss-ya-wod">
+                                            <rect key="frame" x="25" y="6" width="270" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="黒"/>
+                                                <segment title="赤"/>
+                                                <segment title="青"/>
+                                                <segment title="黄"/>
+                                                <segment title="緑"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EIK-c6-SwH"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zVu-ny-sGR" firstAttribute="top" secondItem="Nyr-r8-BtD" secondAttribute="bottom" id="3ap-kT-Yag"/>
+                            <constraint firstItem="Kju-97-jCO" firstAttribute="leading" secondItem="v55-vS-xm1" secondAttribute="leading" id="4IP-ut-l2g"/>
+                            <constraint firstItem="Nyr-r8-BtD" firstAttribute="leading" secondItem="v55-vS-xm1" secondAttribute="leading" id="K9H-aD-ZVk"/>
+                            <constraint firstItem="Nyr-r8-BtD" firstAttribute="top" secondItem="Kju-97-jCO" secondAttribute="bottom" id="MwA-1n-a8v"/>
+                            <constraint firstAttribute="trailing" secondItem="Kju-97-jCO" secondAttribute="trailing" id="TUx-5D-qQC"/>
+                            <constraint firstItem="Nyr-r8-BtD" firstAttribute="top" secondItem="Kju-97-jCO" secondAttribute="bottom" id="ZdV-lg-riB"/>
+                            <constraint firstAttribute="trailing" secondItem="Nyr-r8-BtD" secondAttribute="trailing" id="rPc-ED-rtu"/>
+                            <constraint firstItem="Kju-97-jCO" firstAttribute="top" secondItem="v55-vS-xm1" secondAttribute="top" id="wmh-mo-eSt"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="GNJ-uP-sip"/>
+                    <navigationItem key="navigationItem" id="fNU-b5-Tvr">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8tE-4v-8VL">
+                            <connections>
+                                <action selector="cancelButton:" destination="VdH-1O-eak" id="sl9-vY-e4c"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Ehr-lt-NdP">
+                            <connections>
+                                <action selector="saveButton:" destination="VdH-1O-eak" id="7XZ-gq-ARY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="canvas" destination="Kju-97-jCO" id="YIy-2r-ZOq"/>
+                        <outlet property="segument" destination="Gss-ya-wod" id="IP8-Gq-AxK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQx-LJ-BqH" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="262"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a3e-P6-mMd">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="ToX-nY-N0G" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8pe-sy-2G2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VdH-1O-eak" kind="relationship" relationship="rootViewController" id="Vxk-g2-B9h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SBe-PV-iTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-206" y="262"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
